@@ -1,0 +1,26 @@
+<h1>
+Logger List
+</h1>
+<mat-divider></mat-divider>
+<mat-accordion>
+   <mat-expansion-panel *ngFor="let item of items">   
+      <mat-expansion-panel-header>  
+        <mat-panel-title class="desc">{{item.group}} - {{item.logger}} </mat-panel-title>        
+      </mat-expansion-panel-header>
+      <mat-nav-list>
+        <mat-list-item *ngFor="let appender of item.appenders">
+          <mat-form-field>
+            <input matInput placeholder="Appender name" [value]="appender.pkg_name" required>
+            <mat-icon matSuffix>edit</mat-icon>            
+          </mat-form-field>
+          <button mat-button><mat-icon>remove</mat-icon></button>
+        </mat-list-item>
+        <button mat-button color="primary"><mat-icon>add</mat-icon>ADD</button>
+        <button mat-button><mat-icon>save</mat-icon>SAVE</button>
+        <button mat-button><mat-icon>remove</mat-icon>DELETE</button>
+      </mat-nav-list>
+   </mat-expansion-panel>
+</mat-accordion>
+<p class="full-width">
+  <button mat-button><mat-icon>add</mat-icon>ADD</button>
+</p>
