@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MatListModule, MatIconModule, MatButtonModule,
     MatDividerModule, MatExpansionModule,MatFormFieldModule, 
-    MatInputModule, } from '@angular/material';
+    MatInputModule,  MatSelectModule} from '@angular/material';
 import { BrowserAnimationsModule }     from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -14,6 +14,7 @@ import { BrowserAnimationsModule }     from '@angular/platform-browser/animation
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
   ],
   exports: [
     MatListModule,
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule }     from '@angular/platform-browser/animation
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
   ],
   declarations: []
 })
