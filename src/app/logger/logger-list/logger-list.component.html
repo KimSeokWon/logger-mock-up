@@ -2,7 +2,39 @@
 Logger List
 </h1>
 <mat-divider></mat-divider>
-<mat-accordion>
+<h4>Select System</h4>
+<mat-form-field>
+  <mat-label>System Code</mat-label>
+  <mat-select [(value)]="selectedSystem">
+    <mat-option *ngFor="let system of systems | async" [value]="system.name">
+      {{system.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf="loggers">
+<h4>Configured loggers<button mat-button (click)="add()"><mat-icon>add</mat-icon>ADD</button></h4>
+
+  <p *ngIf="addFlag">    
+    <mat-form-field class="input-width">
+      <input type="text" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let option of selectableLoggers | async | keyvalue" [value]="option.key">{{option.key}}</mat-option>
+    </mat-autocomplete>
+    <mat-form-field>
+      <mat-label>Level</mat-label>
+      <mat-select [(value)]="selectedLevel">
+        <mat-option *ngFor="let level of levels" value="level">{{level}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button (click)="applyPolicy(myControl.value, selectedLevel)">APPLY</button>
+  </p>
+
+  <mat-list *ngFor="let item of loggers | keyvalue">
+    <mat-list-item *ngIf="item.key != 'ROOT' && item.configuredLevel"> {{item.key}} {{item.value}}</mat-list-item>  
+  </mat-list>
+</div>
+<!-- <mat-accordion>
    <mat-expansion-panel *ngFor="let item of items">   
       <mat-expansion-panel-header>
         <mat-panel-title *ngIf="!item.new_created" class="desc">{{item.logger}} </mat-panel-title> 
@@ -36,4 +68,4 @@ Logger List
 </mat-accordion>
 <p class="full-width">
   <button mat-button (click)="addItem()" *ngIf="enableToAdd()"><mat-icon>add</mat-icon>ADD</button>
-</p>
+</p> -->

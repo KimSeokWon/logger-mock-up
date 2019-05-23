@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {MatListModule, MatIconModule, MatButtonModule,
     MatDividerModule, MatExpansionModule,MatFormFieldModule, 
-    MatInputModule,  MatSelectModule} from '@angular/material';
+    MatInputModule,  MatSelectModule, MatAutocompleteModule} from '@angular/material';
 import { BrowserAnimationsModule }     from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { BrowserAnimationsModule }     from '@angular/platform-browser/animation
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatAutocompleteModule,
   ],
   exports: [
     MatListModule,
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule }     from '@angular/platform-browser/animation
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatAutocompleteModule,
   ],
   declarations: []
 })

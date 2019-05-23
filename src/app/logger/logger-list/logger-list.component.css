@@ -10,3 +10,6 @@ p.full-width button {
 .flex {
   flex:1; 
 }
+.input-width {
+  width: 20rem;
+}
